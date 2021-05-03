@@ -1,8 +1,10 @@
 import React from 'react'
 import { Nav, Button } from 'react-bootstrap';
 import Link from 'next/link'
+import { signIn, signOut, useSession, getSession } from 'next-auth/client'
 
 export default function Navbar() {
+  const [ session, loading ] = useSession()
   return (
     <Nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-xl">
@@ -32,10 +34,15 @@ export default function Navbar() {
         </li>
       </ul>
       <ul className="navbar-nav px-3">
-        <li className="nav-item text-nowrap">
-          <Button className="nav-link">
-              Signup
-          </Button>
+      <li className="nav-item text-nowrap">
+          {!session && 
+            <Button onClick={() => signIn()}>Sign in</Button>
+          }
+          {session && 
+            <Button className="nav-link" onClick={() => signOut()}>
+              Sign out
+            </Button>
+          }
         </li>
       </ul>
     </div>
