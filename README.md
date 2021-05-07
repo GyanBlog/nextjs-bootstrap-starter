@@ -9,7 +9,7 @@ npm run dev
 Open http://localhost:3000/
 
 ## Code Structure Understanding
-https://www.gyablog.com/javascript/next-js-bootstrap-template-navbar-header/
+https://www.gyanblog.com/javascript/next-js-bootstrap-template-navbar-header/
 
 ## Screenshots
 ### Screenshots Home Page (/)
